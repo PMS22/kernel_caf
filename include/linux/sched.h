@@ -1124,7 +1124,7 @@ struct ravg {
 	u32 sum_history[RAVG_HIST_SIZE_MAX];
 #ifdef CONFIG_SCHED_FREQ_INPUT
 	u32 curr_window, prev_window;
-	u16 active_windows;
+        u16 active_windows;
 #endif
 };
 
@@ -1196,7 +1196,7 @@ struct task_struct {
 	atomic_t usage;
 	unsigned int flags;	/* per process flags, defined below */
 	unsigned int ptrace;
-	unsigned int yield_count;
+        unsigned int yield_count;
 
 #ifdef CONFIG_SMP
 	struct llist_node wake_entry;
@@ -1776,15 +1776,15 @@ extern int task_free_register(struct notifier_block *n);
 extern int task_free_unregister(struct notifier_block *n);
 
 struct sched_load {
-	unsigned long prev_load;
-	unsigned long new_task_load;
+    unsigned long prev_load;
+    unsigned long new_task_load;
 };
 
 #ifdef CONFIG_SCHED_FREQ_INPUT
 extern int sched_set_window(u64 window_start, unsigned int window_size);
 extern unsigned long sched_get_busy(int cpu);
 extern void sched_get_cpus_busy(struct sched_load *busy,
-				const struct cpumask *query_cpus);
+                        const struct cpumask *query_cpus);
 extern void sched_set_io_is_busy(int val);
 int sched_update_freq_max_load(const cpumask_t *cpumask);
 #else
@@ -1804,6 +1804,7 @@ static inline int sched_update_freq_max_load(const cpumask_t *cpumask)
 {
 	return 0;
 }
+
 #endif
 
 /*

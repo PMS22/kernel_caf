@@ -844,6 +844,11 @@ static inline void sched_account_irqtime(int cpu, struct task_struct *curr,
 {
 }
 
+static inline unsigned int nr_eligible_big_tasks(int cpu)
+{
+	return 0;
+}
+
 #endif	/* CONFIG_SCHED_HMP */
 
 #ifdef CONFIG_SCHED_FREQ_INPUT
